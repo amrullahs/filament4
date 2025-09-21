@@ -21,6 +21,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 // use Rmsramos\Activitylog\ActivitylogPlugin;
+use AchyutN\FilamentLogViewer\FilamentLogViewer;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -58,6 +59,7 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentUsersPlugin::make(),
                 FilamentShieldPlugin::make(), 
+        FilamentLogViewer::make(),
                 // ActivitylogPlugin::make(),
             ])
             ->authMiddleware([
